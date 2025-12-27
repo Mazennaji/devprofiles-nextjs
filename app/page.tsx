@@ -1,6 +1,13 @@
 import Link from "next/link";
 
-const developers = [
+type Developer = {
+  id: string;
+  name: string;
+  role: string;
+  bio: string;
+};
+
+const developers: Developer[] = [
   { id: "1", name: "Alice Johnson", role: "Frontend Developer", bio: "React and UI specialist." },
   { id: "2", name: "Bob Smith", role: "Backend Developer", bio: "Node.js and database expert." },
   { id: "3", name: "Charlie Brown", role: "Full Stack Developer", bio: "Works across frontend and backend." },
