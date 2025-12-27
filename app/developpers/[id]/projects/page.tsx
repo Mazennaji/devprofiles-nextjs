@@ -6,9 +6,14 @@ type PageProps = {
 
 export default function ProjectsPage({ params }: PageProps) {
   return (
-    <div>
-      <h3>Projects</h3>
-      <p>This page shows the projects for developer with ID: {params.id}</p>
+    <div className="rounded-xl bg-white p-6 shadow-sm">
+      <h3 className="mb-4 text-xl font-semibold text-gray-900">
+        Projects
+      </h3>
+      <p className="text-gray-700">
+        This page shows the projects for developer with ID:{" "}
+        <span className="font-medium">{params.id}</span>
+      </p>
     </div>
   );
 }

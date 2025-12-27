@@ -23,16 +23,29 @@ export default function DeveloperPage({ params }: PageProps) {
   const developer = developers.find((dev) => dev.id === params.id);
 
   if (!developer) {
-    return <p>Developer not found</p>;
+    return (
+      <p className="rounded-lg bg-red-100 p-4 text-red-700">
+        Developer not found
+      </p>
+    );
   }
 
   return (
-    <div>
-      <h3>{developer.name}</h3>
-      <p><strong>Role:</strong> {developer.role}</p>
-      <p>{developer.bio}</p>
+    <div className="rounded-xl bg-white p-6 shadow-sm">
+      <h3 className="text-2xl font-semibold text-gray-900">
+        {developer.name}
+      </h3>
 
-      <Link href={`/developers/${developer.id}/projects`}>
+      <p className="mt-2 text-gray-600">
+        <span className="font-medium">Role:</span> {developer.role}
+      </p>
+
+      <p className="mt-4 text-gray-700">{developer.bio}</p>
+
+      <Link
+        href={`/developers/${developer.id}/projects`}
+        className="mt-6 inline-block rounded-lg bg-blue-600 px-5 py-2 text-white transition hover:bg-blue-700"
+      >
         View Projects
       </Link>
     </div>
