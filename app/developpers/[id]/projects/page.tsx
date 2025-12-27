@@ -11,7 +11,7 @@ export default function ProjectsPage({ params }: PageProps) {
         Projects
       </h3>
       <p className="text-gray-700">
-        This page shows the projects for developer with ID:{" "}
+        This page displays projects for developer with ID:{" "}
         <span className="font-medium">{params.id}</span>
       </p>
     </div>
