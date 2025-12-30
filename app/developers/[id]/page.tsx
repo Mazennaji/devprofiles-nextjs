@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { developers } from "@/app/data/developers";
+import { developers } from "@/data/developers";
 
 type PageProps = {
   params: Promise<{
@@ -8,7 +8,7 @@ type PageProps = {
 };
 
 export default async function DeveloperPage({ params }: PageProps) {
-  const { id } = await params; // ✅ unwrap params
+  const { id } = await params;
 
   const developer = developers.find(
     (dev) => dev.id === id
