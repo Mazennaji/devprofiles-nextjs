@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { developers } from "./data/developers";
+import { developers } from "@/app/data/developers";
 
 export default function HomePage() {
   return (

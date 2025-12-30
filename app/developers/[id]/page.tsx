@@ -1,18 +1,29 @@
 import Link from "next/link";
 import { developers } from "@/app/data/developers";
 
-export default function DeveloperPage({
-  params,
-}: {
-  params: { id: string };
-}) {
-  const developer = developers.find(d => d.id === params.id);
+type PageProps = {
+  params: Promise<{
+    id: string;
+  }>;
+};
+
+export default async function DeveloperPage({ params }: PageProps) {
+  const { id } = await params; // ✅ unwrap params
+
+  const developer = developers.find(
+    (dev) => dev.id === id
+  );
 
   if (!developer) {
     return (
-      <p className="rounded bg-red-100 p-4 text-red-700">
-        Developer not found
-      </p>
+      <div className="mx-auto max-w-3xl p-8">
+        <p className="rounded bg-red-100 p-4 text-red-700">
+          Developer not found
+        </p>
+        <Link href="/" className="text-blue-600">
+          ← Back to developers
+        </Link>
+      </div>
     );
   }
 
@@ -31,7 +42,7 @@ export default function DeveloperPage({
           {developer.technologies.map((tech) => (
             <span
               key={tech}
-              className="rounded-full bg-blue-100 px-3 py-1 text-sm font-medium text-blue-700"
+              className="rounded-full bg-blue-100 px-3 py-1 text-sm text-blue-700"
             >
               {tech}
             </span>
