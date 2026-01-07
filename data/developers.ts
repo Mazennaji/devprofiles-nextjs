@@ -30,9 +30,16 @@ export const developers: Developer[] = [
   },
   {
     id: "4",
-    name: "Chris Muller",
+    name: "Sam Muller",
     role: "Android Developer",
     bio: "Android developer focused on building performant mobile applications.",
     technologies: ["Kotlin", "Java", "Android Studio", "Firebase"],
+  },
+  {
+    id: "5",
+    name: "Mike Khazaal",
+    role: "Game Developer",
+    bio: "Game developer focused on building performant game applications.",
+    technologies: ["Unity Engine", "Blender", "C#"],
   },
 ];
