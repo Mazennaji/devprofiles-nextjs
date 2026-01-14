@@ -52,6 +52,14 @@ const projectsByDeveloper: Record<
       tech: ["Kotlin", "Firebase"],
     },
   ],
+  "5": [
+    {
+      title: "3D Racing Game",
+      description:
+        "High-performance racing game in Unity Engine",
+      tech: ["Unity Engine", "C#"],
+    },
+  ],
 };
 
 export default async function ProjectsPage({ params }: PageProps) {
